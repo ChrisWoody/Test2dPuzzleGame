@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Test2dPuzzleGame"
-run/main_scene="uid://11i0mtkuerol"
+run/main_scene="uid://c0vcp3wbc7df0"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
