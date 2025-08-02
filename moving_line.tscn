@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5q2ixdspujea"]
+
+[ext_resource type="Texture2D" uid="uid://dhib76btqh5ad" path="res://tiletexture.png" id="1_on2gm"]
+[ext_resource type="Script" uid="uid://o0efm7engqo5" path="res://moving_line.gd" id="2_frrj1"]
+
+[node name="MovingLine" type="Line2D"]
+texture_filter = 1
+points = PackedVector2Array(-16, 52, 184, 57, 183, -24)
+width = 4.0
+texture = ExtResource("1_on2gm")
+texture_mode = 2
+script = ExtResource("2_frrj1")

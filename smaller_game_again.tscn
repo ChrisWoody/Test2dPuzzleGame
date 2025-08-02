@@ -1,0 +1,554 @@
+[gd_scene load_steps=22 format=3 uid="uid://c0vcp3wbc7df0"]
+
+[ext_resource type="PackedScene" uid="uid://c5q2ixdspujea" path="res://moving_line.tscn" id="1_nntov"]
+[ext_resource type="PackedScene" uid="uid://8jfgihhip8at" path="res://circle_toggle.tscn" id="2_4224i"]
+[ext_resource type="Texture2D" uid="uid://bk1noidcycad5" path="res://tiletexture-direction.png" id="2_v6r1p"]
+[ext_resource type="Script" uid="uid://hpadpy8i3yy4" path="res://puzzle.gd" id="3_tcdsx"]
+[ext_resource type="Script" uid="uid://0gvdge3sny3y" path="res://puzzle_selected_stars.gd" id="5_11nb7"]
+[ext_resource type="Texture2D" uid="uid://bqmkwkr4wibbu" path="res://star-off.png" id="6_fs41p"]
+[ext_resource type="Script" uid="uid://coatscptgtjjj" path="res://puzzle_selected_stars_star.gd" id="7_wy04u"]
+[ext_resource type="Script" uid="uid://damrpyok0q6fp" path="res://puzzle_binary_number.gd" id="8_wy04u"]
+[ext_resource type="Script" uid="uid://dawq51wtsm11n" path="res://game_over_label.gd" id="9_62a87"]
+
+[sub_resource type="Gradient" id="Gradient_fs41p"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_wy04u"]
+gradient = SubResource("Gradient_fs41p")
+
+[sub_resource type="Gradient" id="Gradient_4224i"]
+colors = PackedColorArray(0, 0.913646, 0.913646, 1, 0, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_tcdsx"]
+gradient = SubResource("Gradient_4224i")
+
+[sub_resource type="Gradient" id="Gradient_v6r1p"]
+colors = PackedColorArray(0.783523, 0.783523, 0.783523, 1, 0.783523, 0.783523, 0.783523, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_11nb7"]
+gradient = SubResource("Gradient_v6r1p")
+
+[sub_resource type="Gradient" id="Gradient_pqugy"]
+colors = PackedColorArray(0, 0.933333, 0.933333, 1, 0, 0.960784, 0.960784, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_fs41p"]
+gradient = SubResource("Gradient_pqugy")
+
+[sub_resource type="Gradient" id="Gradient_11nb7"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_pqugy"]
+gradient = SubResource("Gradient_11nb7")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pqugy"]
+size = Vector2(247.467, 0.923077)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_62a87"]
+size = Vector2(16, 16)
+
+[node name="SmallerGameAgain" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+z_index = -5
+offset_left = -271.0
+offset_top = -161.0
+offset_right = 299.0
+offset_bottom = 172.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -15
+position = Vector2(32, 13)
+scale = Vector2(3.74609, 548)
+texture = SubResource("GradientTexture1D_wy04u")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-4, -2)
+zoom = Vector2(2.47, 2.47)
+
+[node name="MovingLine" parent="." instance=ExtResource("1_nntov")]
+texture_filter = 2
+position = Vector2(-108.378, -61)
+points = PackedVector2Array(108.378, 15, 108.378, -10, 108.378, -36)
+texture = ExtResource("2_v6r1p")
+texture_mode = 1
+joint_mode = 2
+begin_cap_mode = 1
+end_cap_mode = 2
+alwaysOn = true
+directionToggle = true
+
+[node name="MovingLine2" parent="." instance=ExtResource("1_nntov")]
+texture_filter = 2
+position = Vector2(44, -48)
+points = PackedVector2Array(66, 12, 13, 12, -34, 12)
+texture = ExtResource("2_v6r1p")
+texture_mode = 1
+joint_mode = 2
+begin_cap_mode = 1
+end_cap_mode = 2
+directionToggle = true
+
+[node name="MovingLine3" parent="." instance=ExtResource("1_nntov")]
+texture_filter = 2
+position = Vector2(44, -48)
+points = PackedVector2Array(-205, 29, -205, 45, -44, 45, -44, 23)
+texture = ExtResource("2_v6r1p")
+texture_mode = 1
+joint_mode = 2
+begin_cap_mode = 1
+end_cap_mode = 2
+directionToggle = true
+
+[node name="MovingLine4" parent="." instance=ExtResource("1_nntov")]
+texture_filter = 2
+position = Vector2(44, -48)
+points = PackedVector2Array(-56, 12, -119, 12, -172, 12)
+texture = ExtResource("2_v6r1p")
+texture_mode = 1
+joint_mode = 2
+begin_cap_mode = 1
+end_cap_mode = 2
+directionToggle = true
+
+[node name="MovingLine5" parent="." instance=ExtResource("1_nntov")]
+z_index = -1
+texture_filter = 2
+position = Vector2(44, -48)
+points = PackedVector2Array(3, 120, 97, 120, 97, 29)
+texture = ExtResource("2_v6r1p")
+texture_mode = 1
+joint_mode = 2
+begin_cap_mode = 1
+end_cap_mode = 2
+directionToggle = true
+
+[node name="MovingLine6" parent="." instance=ExtResource("1_nntov")]
+texture_filter = 2
+position = Vector2(44, -48)
+points = PackedVector2Array(-44, 84, -44, 91, -44, 105)
+texture = ExtResource("2_v6r1p")
+texture_mode = 1
+joint_mode = 2
+begin_cap_mode = 1
+end_cap_mode = 2
+directionToggle = true
+
+[node name="CircleToggle" parent="." node_paths=PackedStringArray("movingLineTop", "movingLineBottom", "movingLineLeft", "movingLineRight") instance=ExtResource("2_4224i")]
+position = Vector2(0, -36)
+movingLineTop = NodePath("../MovingLine")
+movingLineBottom = NodePath("../MovingLine3")
+movingLineLeft = NodePath("../MovingLine4")
+movingLineRight = NodePath("../MovingLine2")
+toggleUp = false
+
+[node name="Battery" type="Sprite2D" parent="."]
+position = Vector2(0, -93)
+scale = Vector2(0.0703125, 33.5)
+texture = SubResource("GradientTexture1D_tcdsx")
+
+[node name="PuzzleSquaresInOrder" type="Sprite2D" parent="." node_paths=PackedStringArray("movingLineIn", "movingLineOut", "square01", "square02", "square03", "square04", "turnedOnBackground")]
+position = Vector2(-159, -36)
+scale = Vector2(0.234375, 32.5)
+texture = SubResource("GradientTexture1D_11nb7")
+script = ExtResource("3_tcdsx")
+movingLineIn = NodePath("../MovingLine3")
+movingLineOut = NodePath("../MovingLine4")
+square01 = NodePath("PuzzleSquare01")
+square02 = NodePath("PuzzleSquare02")
+square03 = NodePath("PuzzleSquare03")
+square04 = NodePath("PuzzleSquare04")
+turnedOnBackground = NodePath("TurnedOnBackground")
+
+[node name="TurnedOnBackground" type="Sprite2D" parent="PuzzleSquaresInOrder"]
+modulate = Color(1, 1, 1, 0)
+show_behind_parent = true
+position = Vector2(-8.58307e-06, -0.00384612)
+scale = Vector2(1.06667, 1.11538)
+texture = SubResource("GradientTexture1D_fs41p")
+
+[node name="PuzzleSquare01" type="Sprite2D" parent="PuzzleSquaresInOrder"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-89.6, -2.98023e-08)
+scale = Vector2(0.216667, 0.369231)
+texture = SubResource("GradientTexture1D_pqugy")
+
+[node name="Area2D" type="Area2D" parent="PuzzleSquaresInOrder/PuzzleSquare01"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PuzzleSquaresInOrder/PuzzleSquare01/Area2D"]
+position = Vector2(-6.10352e-05, -4.76837e-07)
+scale = Vector2(1, 0.999999)
+shape = SubResource("RectangleShape2D_pqugy")
+
+[node name="PuzzleSquare02" type="Sprite2D" parent="PuzzleSquaresInOrder"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-29.8667, -2.98023e-08)
+scale = Vector2(0.216667, 0.369231)
+texture = SubResource("GradientTexture1D_pqugy")
+
+[node name="Area2D" type="Area2D" parent="PuzzleSquaresInOrder/PuzzleSquare02"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PuzzleSquaresInOrder/PuzzleSquare02/Area2D"]
+position = Vector2(-6.10352e-05, -4.76837e-07)
+scale = Vector2(1, 0.999999)
+shape = SubResource("RectangleShape2D_pqugy")
+
+[node name="PuzzleSquare03" type="Sprite2D" parent="PuzzleSquaresInOrder"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(29.8667, -2.98023e-08)
+scale = Vector2(0.216667, 0.369231)
+texture = SubResource("GradientTexture1D_pqugy")
+
+[node name="Area2D" type="Area2D" parent="PuzzleSquaresInOrder/PuzzleSquare03"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PuzzleSquaresInOrder/PuzzleSquare03/Area2D"]
+position = Vector2(-6.10352e-05, -4.76837e-07)
+scale = Vector2(1, 0.999999)
+shape = SubResource("RectangleShape2D_pqugy")
+
+[node name="PuzzleSquare04" type="Sprite2D" parent="PuzzleSquaresInOrder"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(89.6, -2.98023e-08)
+scale = Vector2(0.216667, 0.369231)
+texture = SubResource("GradientTexture1D_pqugy")
+
+[node name="Area2D" type="Area2D" parent="PuzzleSquaresInOrder/PuzzleSquare04"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PuzzleSquaresInOrder/PuzzleSquare04/Area2D"]
+position = Vector2(-6.10352e-05, -4.76837e-07)
+scale = Vector2(1, 0.999999)
+shape = SubResource("RectangleShape2D_pqugy")
+
+[node name="PuzzleSelectedStars" type="Sprite2D" parent="." node_paths=PackedStringArray("movingLineIn", "movingLineOut", "stars", "turnedOnBackground")]
+position = Vector2(141, -34)
+scale = Vector2(0.246094, 29)
+texture = SubResource("GradientTexture1D_11nb7")
+script = ExtResource("5_11nb7")
+movingLineIn = NodePath("../MovingLine2")
+movingLineOut = NodePath("../MovingLine5")
+stars = [NodePath("Star01"), NodePath("Star02"), NodePath("Star03"), NodePath("Star04"), NodePath("Star05"), NodePath("Star06")]
+turnedOnBackground = NodePath("TurnedOnBackground")
+
+[node name="TurnedOnBackground" type="Sprite2D" parent="PuzzleSelectedStars"]
+modulate = Color(1, 1, 1, 0)
+show_behind_parent = true
+position = Vector2(0, -0.0135112)
+scale = Vector2(1.0836, 1.21436)
+texture = SubResource("GradientTexture1D_fs41p")
+
+[node name="GreenStars" type="Sprite2D" parent="PuzzleSelectedStars"]
+modulate = Color(0, 1, 0, 1)
+texture_filter = 2
+position = Vector2(-85.3333, -0.172414)
+scale = Vector2(2.95527, 0.0250784)
+texture = ExtResource("6_fs41p")
+
+[node name="GreenStarsLabel" type="Label" parent="PuzzleSelectedStars"]
+modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+offset_left = -89.3968
+offset_top = 0.103448
+offset_right = -79.3968
+offset_bottom = 23.1034
+scale = Vector2(2.555, 0.02)
+text = "2"
+
+[node name="RedStars" type="Sprite2D" parent="PuzzleSelectedStars"]
+modulate = Color(1, 0, 0, 1)
+texture_filter = 2
+position = Vector2(-12.1905, -0.172414)
+scale = Vector2(2.95527, 0.0250784)
+texture = ExtResource("6_fs41p")
+
+[node name="RedStarsLabel" type="Label" parent="PuzzleSelectedStars"]
+modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+offset_left = -20.3175
+offset_top = 0.137931
+offset_right = -10.3175
+offset_bottom = 23.1379
+scale = Vector2(2.555, 0.02)
+text = "1"
+
+[node name="BlueStars" type="Sprite2D" parent="PuzzleSelectedStars"]
+modulate = Color(0, 0, 1, 1)
+texture_filter = 2
+position = Vector2(60.9524, -0.172414)
+scale = Vector2(2.95527, 0.0250784)
+texture = ExtResource("6_fs41p")
+
+[node name="BlueStarsLabel" type="Label" parent="PuzzleSelectedStars"]
+modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+offset_left = 52.8254
+offset_top = 0.172414
+offset_right = 62.8254
+offset_bottom = 23.1724
+scale = Vector2(2.555, 0.02)
+text = "3"
+
+[node name="Star01" type="Sprite2D" parent="PuzzleSelectedStars"]
+texture_filter = 2
+position = Vector2(-146.286, 2.27586)
+scale = Vector2(2.95527, 0.0250784)
+texture = ExtResource("6_fs41p")
+script = ExtResource("7_wy04u")
+
+[node name="Area2D" type="Area2D" parent="PuzzleSelectedStars/Star01"]
+position = Vector2(-7.62939e-06, 1.90735e-06)
+scale = Vector2(1.375, 1.375)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PuzzleSelectedStars/Star01/Area2D"]
+position = Vector2(7.62939e-06, 1.90735e-06)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_62a87")
+
+[node name="Star02" type="Sprite2D" parent="PuzzleSelectedStars"]
+texture_filter = 2
+position = Vector2(-300.698, -1.24138)
+scale = Vector2(2.95527, 0.0250784)
+texture = ExtResource("6_fs41p")
+script = ExtResource("7_wy04u")
+
+[node name="Area2D" type="Area2D" parent="PuzzleSelectedStars/Star02"]
+position = Vector2(-7.62939e-06, 1.90735e-06)
+scale = Vector2(1.375, 1.375)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PuzzleSelectedStars/Star02/Area2D"]
+position = Vector2(7.62939e-06, 1.90735e-06)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_62a87")
+
+[node name="Star03" type="Sprite2D" parent="PuzzleSelectedStars"]
+texture_filter = 2
+position = Vector2(-77.2064, -1.51724)
+scale = Vector2(2.95527, 0.0250784)
+texture = ExtResource("6_fs41p")
+script = ExtResource("7_wy04u")
+
+[node name="Area2D" type="Area2D" parent="PuzzleSelectedStars/Star03"]
+position = Vector2(-7.62939e-06, 1.90735e-06)
+scale = Vector2(1.375, 1.375)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PuzzleSelectedStars/Star03/Area2D"]
+position = Vector2(7.62939e-06, 1.90735e-06)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_62a87")
+
+[node name="Star04" type="Sprite2D" parent="PuzzleSelectedStars"]
+texture_filter = 2
+position = Vector2(-1235.3, -2.41379)
+scale = Vector2(2.95527, 0.0250784)
+texture = ExtResource("6_fs41p")
+script = ExtResource("7_wy04u")
+
+[node name="Area2D" type="Area2D" parent="PuzzleSelectedStars/Star04"]
+position = Vector2(-7.62939e-06, 1.90735e-06)
+scale = Vector2(1.375, 1.375)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PuzzleSelectedStars/Star04/Area2D"]
+position = Vector2(7.62939e-06, 1.90735e-06)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_62a87")
+
+[node name="Star05" type="Sprite2D" parent="PuzzleSelectedStars"]
+texture_filter = 2
+position = Vector2(-1011.81, 1.75862)
+scale = Vector2(2.95527, 0.0250784)
+texture = ExtResource("6_fs41p")
+script = ExtResource("7_wy04u")
+
+[node name="Area2D" type="Area2D" parent="PuzzleSelectedStars/Star05"]
+position = Vector2(-7.62939e-06, 1.90735e-06)
+scale = Vector2(1.375, 1.375)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PuzzleSelectedStars/Star05/Area2D"]
+position = Vector2(7.62939e-06, 1.90735e-06)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_62a87")
+
+[node name="Star06" type="Sprite2D" parent="PuzzleSelectedStars"]
+texture_filter = 2
+position = Vector2(-800.508, -1.48276)
+scale = Vector2(2.95527, 0.0250784)
+texture = ExtResource("6_fs41p")
+script = ExtResource("7_wy04u")
+
+[node name="Area2D" type="Area2D" parent="PuzzleSelectedStars/Star06"]
+position = Vector2(-7.62939e-06, 1.90735e-06)
+scale = Vector2(1.375, 1.375)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PuzzleSelectedStars/Star06/Area2D"]
+position = Vector2(7.62939e-06, 1.90735e-06)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_62a87")
+
+[node name="Label" type="Label" parent="."]
+modulate = Color(0, 0, 0, 1)
+z_index = 2
+offset_left = 43.0
+offset_top = 66.0
+offset_right = 71.0
+offset_bottom = 89.0
+scale = Vector2(0.48, 0.48)
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "109"
+
+[node name="PuzzleBinaryNumber" type="Sprite2D" parent="." node_paths=PackedStringArray("movingLineIn", "movingLineOut", "turnedOnBackground", "button128", "button64", "button32", "button16", "button8", "button4", "button2", "button1")]
+position = Vector2(0, 71)
+scale = Vector2(0.46875, 27.5)
+texture = SubResource("GradientTexture1D_11nb7")
+script = ExtResource("8_wy04u")
+movingLineIn = NodePath("../MovingLine5")
+movingLineOut = NodePath("../MovingLine6")
+turnedOnBackground = NodePath("TurnedOnBackground")
+button128 = NodePath("PuzzleSquare128")
+button64 = NodePath("PuzzleSquare64")
+button32 = NodePath("PuzzleSquare32")
+button16 = NodePath("PuzzleSquare16")
+button8 = NodePath("PuzzleSquare8")
+button4 = NodePath("PuzzleSquare4")
+button2 = NodePath("PuzzleSquare2")
+button1 = NodePath("PuzzleSquare1")
+
+[node name="TurnedOnBackground" type="Sprite2D" parent="PuzzleBinaryNumber"]
+modulate = Color(1, 1, 1, 0)
+show_behind_parent = true
+position = Vector2(1.43051e-05, 0.00592453)
+scale = Vector2(1.05, 1.17549)
+texture = SubResource("GradientTexture1D_fs41p")
+
+[node name="PuzzleSquare128" type="Sprite2D" parent="PuzzleBinaryNumber"]
+modulate = Color(1, 1, 1, 0.501961)
+position = Vector2(-104.533, -2.98023e-08)
+scale = Vector2(0.0916667, 0.369231)
+texture = SubResource("GradientTexture1D_pqugy")
+
+[node name="Area2D" type="Area2D" parent="PuzzleBinaryNumber/PuzzleSquare128"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PuzzleBinaryNumber/PuzzleSquare128/Area2D"]
+position = Vector2(-6.10352e-05, -4.76837e-07)
+scale = Vector2(1, 0.999999)
+shape = SubResource("RectangleShape2D_pqugy")
+
+[node name="PuzzleSquare64" type="Sprite2D" parent="PuzzleBinaryNumber"]
+modulate = Color(1, 1, 1, 0.501961)
+position = Vector2(-78.9333, -2.98023e-08)
+scale = Vector2(0.0916667, 0.369231)
+texture = SubResource("GradientTexture1D_pqugy")
+
+[node name="Area2D" type="Area2D" parent="PuzzleBinaryNumber/PuzzleSquare64"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PuzzleBinaryNumber/PuzzleSquare64/Area2D"]
+position = Vector2(-6.10352e-05, -4.76837e-07)
+scale = Vector2(1, 0.999999)
+shape = SubResource("RectangleShape2D_pqugy")
+
+[node name="PuzzleSquare32" type="Sprite2D" parent="PuzzleBinaryNumber"]
+modulate = Color(1, 1, 1, 0.501961)
+position = Vector2(-53.3333, -2.98023e-08)
+scale = Vector2(0.0916667, 0.369231)
+texture = SubResource("GradientTexture1D_pqugy")
+
+[node name="Area2D" type="Area2D" parent="PuzzleBinaryNumber/PuzzleSquare32"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PuzzleBinaryNumber/PuzzleSquare32/Area2D"]
+position = Vector2(-6.10352e-05, -4.76837e-07)
+scale = Vector2(1, 0.999999)
+shape = SubResource("RectangleShape2D_pqugy")
+
+[node name="PuzzleSquare16" type="Sprite2D" parent="PuzzleBinaryNumber"]
+modulate = Color(1, 1, 1, 0.501961)
+position = Vector2(-27.7333, -2.98023e-08)
+scale = Vector2(0.0916667, 0.369231)
+texture = SubResource("GradientTexture1D_pqugy")
+
+[node name="Area2D" type="Area2D" parent="PuzzleBinaryNumber/PuzzleSquare16"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PuzzleBinaryNumber/PuzzleSquare16/Area2D"]
+position = Vector2(-6.10352e-05, -4.76837e-07)
+scale = Vector2(1, 0.999999)
+shape = SubResource("RectangleShape2D_pqugy")
+
+[node name="PuzzleSquare8" type="Sprite2D" parent="PuzzleBinaryNumber"]
+modulate = Color(1, 1, 1, 0.501961)
+position = Vector2(-2.13331, -2.98023e-08)
+scale = Vector2(0.0916667, 0.369231)
+texture = SubResource("GradientTexture1D_pqugy")
+
+[node name="Area2D" type="Area2D" parent="PuzzleBinaryNumber/PuzzleSquare8"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PuzzleBinaryNumber/PuzzleSquare8/Area2D"]
+position = Vector2(-6.10352e-05, -4.76837e-07)
+scale = Vector2(1, 0.999999)
+shape = SubResource("RectangleShape2D_pqugy")
+
+[node name="PuzzleSquare4" type="Sprite2D" parent="PuzzleBinaryNumber"]
+modulate = Color(1, 1, 1, 0.501961)
+position = Vector2(23.4667, -2.98023e-08)
+scale = Vector2(0.0916667, 0.369231)
+texture = SubResource("GradientTexture1D_pqugy")
+
+[node name="Area2D" type="Area2D" parent="PuzzleBinaryNumber/PuzzleSquare4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PuzzleBinaryNumber/PuzzleSquare4/Area2D"]
+position = Vector2(-6.10352e-05, -4.76837e-07)
+scale = Vector2(1, 0.999999)
+shape = SubResource("RectangleShape2D_pqugy")
+
+[node name="PuzzleSquare2" type="Sprite2D" parent="PuzzleBinaryNumber"]
+modulate = Color(1, 1, 1, 0.501961)
+position = Vector2(49.0667, -2.98023e-08)
+scale = Vector2(0.0916667, 0.369231)
+texture = SubResource("GradientTexture1D_pqugy")
+
+[node name="Area2D" type="Area2D" parent="PuzzleBinaryNumber/PuzzleSquare2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PuzzleBinaryNumber/PuzzleSquare2/Area2D"]
+position = Vector2(-6.10352e-05, -4.76837e-07)
+scale = Vector2(1, 0.999999)
+shape = SubResource("RectangleShape2D_pqugy")
+
+[node name="PuzzleSquare1" type="Sprite2D" parent="PuzzleBinaryNumber"]
+modulate = Color(1, 1, 1, 0.501961)
+position = Vector2(74.6667, -2.98023e-08)
+scale = Vector2(0.0916667, 0.369231)
+texture = SubResource("GradientTexture1D_pqugy")
+
+[node name="Area2D" type="Area2D" parent="PuzzleBinaryNumber/PuzzleSquare1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PuzzleBinaryNumber/PuzzleSquare1/Area2D"]
+position = Vector2(-6.10352e-05, -4.76837e-07)
+scale = Vector2(1, 0.999999)
+shape = SubResource("RectangleShape2D_pqugy")
+
+[node name="GameOverLabel" type="Label" parent="." node_paths=PackedStringArray("movingLineIn")]
+modulate = Color(0, 0, 0, 1)
+texture_filter = 2
+offset_left = -70.0
+offset_top = 9.0
+offset_right = 81.0
+offset_bottom = 32.0
+text = "You win! Well done!"
+script = ExtResource("9_62a87")
+movingLineIn = NodePath("../MovingLine6")
+
+[connection signal="input_event" from="PuzzleSquaresInOrder/PuzzleSquare01/Area2D" to="PuzzleSquaresInOrder" method="_square_01_click"]
+[connection signal="input_event" from="PuzzleSquaresInOrder/PuzzleSquare02/Area2D" to="PuzzleSquaresInOrder" method="_square_02_click"]
+[connection signal="input_event" from="PuzzleSquaresInOrder/PuzzleSquare03/Area2D" to="PuzzleSquaresInOrder" method="_square_03_click"]
+[connection signal="input_event" from="PuzzleSquaresInOrder/PuzzleSquare04/Area2D" to="PuzzleSquaresInOrder" method="_square_04_click"]
+[connection signal="input_event" from="PuzzleSelectedStars/Star01/Area2D" to="PuzzleSelectedStars/Star01" method="_on_area_2d_input_event"]
+[connection signal="input_event" from="PuzzleSelectedStars/Star02/Area2D" to="PuzzleSelectedStars/Star02" method="_on_area_2d_input_event"]
+[connection signal="input_event" from="PuzzleSelectedStars/Star03/Area2D" to="PuzzleSelectedStars/Star03" method="_on_area_2d_input_event"]
+[connection signal="input_event" from="PuzzleSelectedStars/Star04/Area2D" to="PuzzleSelectedStars/Star04" method="_on_area_2d_input_event"]
+[connection signal="input_event" from="PuzzleSelectedStars/Star05/Area2D" to="PuzzleSelectedStars/Star05" method="_on_area_2d_input_event"]
+[connection signal="input_event" from="PuzzleSelectedStars/Star06/Area2D" to="PuzzleSelectedStars/Star06" method="_on_area_2d_input_event"]
+[connection signal="input_event" from="PuzzleBinaryNumber/PuzzleSquare128/Area2D" to="PuzzleBinaryNumber" method="_128"]
+[connection signal="input_event" from="PuzzleBinaryNumber/PuzzleSquare64/Area2D" to="PuzzleBinaryNumber" method="_64"]
+[connection signal="input_event" from="PuzzleBinaryNumber/PuzzleSquare32/Area2D" to="PuzzleBinaryNumber" method="_32"]
+[connection signal="input_event" from="PuzzleBinaryNumber/PuzzleSquare16/Area2D" to="PuzzleBinaryNumber" method="_16"]
+[connection signal="input_event" from="PuzzleBinaryNumber/PuzzleSquare8/Area2D" to="PuzzleBinaryNumber" method="_8"]
+[connection signal="input_event" from="PuzzleBinaryNumber/PuzzleSquare4/Area2D" to="PuzzleBinaryNumber" method="_4"]
+[connection signal="input_event" from="PuzzleBinaryNumber/PuzzleSquare2/Area2D" to="PuzzleBinaryNumber" method="_2"]
+[connection signal="input_event" from="PuzzleBinaryNumber/PuzzleSquare1/Area2D" to="PuzzleBinaryNumber" method="_1"]

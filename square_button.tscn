@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://btsskcxkawq85"]
+
+[ext_resource type="Script" uid="uid://dapr4bp5krjab" path="res://button.gd" id="1_hb6wr"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_a73ej"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hb6wr"]
+
+[node name="SquareButton" type="Sprite2D"]
+texture = SubResource("ImageTexture_a73ej")
+script = ExtResource("1_hb6wr")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_hb6wr")

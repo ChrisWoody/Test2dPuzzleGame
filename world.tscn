@@ -1,0 +1,143 @@
+[gd_scene load_steps=11 format=3 uid="uid://dv51m4h0vedah"]
+
+[ext_resource type="Script" uid="uid://big5wpib3ein8" path="res://world.gd" id="1_f3sb7"]
+[ext_resource type="Texture2D" uid="uid://l4spmx6qn4is" path="res://star-on.png" id="2_fj7yv"]
+[ext_resource type="Texture2D" uid="uid://d0a5l64rpplo2" path="res://star1.png" id="3_tlwt5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gv5m4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gv5m4"]
+bg_color = Color(0.838844, 0.766501, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f3sb7"]
+bg_color = Color(0.158472, 0.158472, 0.158472, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tlwt5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aqk2v"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aqk2v"]
+texture = ExtResource("2_fj7yv")
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tlwt5"]
+texture = ExtResource("3_tlwt5")
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[node name="World" type="Node2D" node_paths=PackedStringArray("label")]
+script = ExtResource("1_f3sb7")
+label = NodePath("Panel/Label")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 71.0
+offset_top = 112.0
+offset_right = 257.0
+offset_bottom = 257.0
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 47.0
+offset_top = -45.0
+offset_right = 80.0
+offset_bottom = -9.0
+theme_override_font_sizes/font_size = 20
+action_mode = 0
+text = "+"
+
+[node name="Button6" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = -46.0
+offset_right = 36.0
+offset_bottom = -10.0
+theme_override_font_sizes/font_size = 20
+action_mode = 0
+text = "-"
+
+[node name="Button2" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 116.0
+offset_top = -44.0
+offset_right = 178.0
+offset_bottom = -13.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_gv5m4")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gv5m4")
+theme_override_styles/normal = SubResource("StyleBoxFlat_f3sb7")
+toggle_mode = true
+action_mode = 0
+
+[node name="Button3" type="Button" parent="Panel"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 116.0
+offset_top = -79.0
+offset_right = 146.0
+offset_bottom = -48.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tlwt5")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_aqk2v")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_aqk2v")
+theme_override_styles/normal = SubResource("StyleBoxTexture_tlwt5")
+toggle_mode = true
+action_mode = 0
+
+[node name="Button4" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 182.0
+offset_top = -79.0
+offset_right = 244.0
+offset_bottom = -48.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_gv5m4")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gv5m4")
+theme_override_styles/normal = SubResource("StyleBoxFlat_f3sb7")
+toggle_mode = true
+action_mode = 0
+
+[node name="Button5" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 182.0
+offset_top = -44.0
+offset_right = 244.0
+offset_bottom = -13.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_gv5m4")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gv5m4")
+theme_override_styles/normal = SubResource("StyleBoxFlat_f3sb7")
+toggle_mode = true
+action_mode = 0
+
+[node name="CheckBox" type="CheckBox" parent="Panel"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 49.0
+offset_right = 108.0
+offset_bottom = 82.0
+text = "Checkbox"
+
+[node name="CheckButton" type="CheckButton" parent="Panel"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 90.0
+offset_right = 137.0
+offset_bottom = 114.0
+text = "Check button"
+
+[node name="Label" type="Label" parent="Panel"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 4.0
+offset_top = -82.0
+offset_right = 79.0
+offset_bottom = -53.0
+text = "0"
+
+[node name="Label2" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = -111.0
+offset_right = 78.0
+offset_bottom = -82.0
+text = "0"
+
+[connection signal="pressed" from="Panel/Button" to="." method="_on_plus_button_pressed"]
+[connection signal="pressed" from="Panel/Button6" to="." method="_on_minus_button_pressed"]

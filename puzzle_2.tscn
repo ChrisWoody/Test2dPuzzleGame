@@ -1,0 +1,81 @@
+[gd_scene load_steps=5 format=3 uid="uid://ckflgfiyebrgt"]
+
+[ext_resource type="Script" uid="uid://baccsii3jinw2" path="res://puzzle_2.gd" id="1_c3s3e"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vy888"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c3s3e"]
+bg_color = Color(0.838844, 0.766501, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pysu6"]
+bg_color = Color(0.158472, 0.158472, 0.158472, 1)
+
+[node name="Puzzle2" type="Node2D"]
+script = ExtResource("1_c3s3e")
+
+[node name="Button1" type="Button" parent="."]
+offset_left = 20.0
+offset_top = 100.0
+offset_right = 82.0
+offset_bottom = 131.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_vy888")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_c3s3e")
+theme_override_styles/normal = SubResource("StyleBoxFlat_pysu6")
+toggle_mode = true
+action_mode = 0
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 99.0
+offset_top = 99.0
+offset_right = 161.0
+offset_bottom = 130.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_vy888")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_c3s3e")
+theme_override_styles/normal = SubResource("StyleBoxFlat_pysu6")
+toggle_mode = true
+action_mode = 0
+
+[node name="Button3" type="Button" parent="."]
+offset_left = 172.0
+offset_top = 100.0
+offset_right = 234.0
+offset_bottom = 131.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_vy888")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_c3s3e")
+theme_override_styles/normal = SubResource("StyleBoxFlat_pysu6")
+toggle_mode = true
+action_mode = 0
+
+[node name="Button4" type="Button" parent="."]
+offset_left = 259.0
+offset_top = 98.0
+offset_right = 321.0
+offset_bottom = 129.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_vy888")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_c3s3e")
+theme_override_styles/normal = SubResource("StyleBoxFlat_pysu6")
+toggle_mode = true
+action_mode = 0
+
+[node name="Button5" type="Button" parent="."]
+offset_left = 343.0
+offset_top = 102.0
+offset_right = 405.0
+offset_bottom = 133.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_vy888")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_c3s3e")
+theme_override_styles/normal = SubResource("StyleBoxFlat_pysu6")
+toggle_mode = true
+action_mode = 0
+
+[node name="Label" type="Label" parent="."]
+offset_left = 105.0
+offset_top = 170.0
+offset_right = 145.0
+offset_bottom = 193.0
+
+[connection signal="toggled" from="Button1" to="." method="_on_button_toggled"]
+[connection signal="toggled" from="Button2" to="." method="_on_button_toggled"]
+[connection signal="toggled" from="Button3" to="." method="_on_button_toggled"]
+[connection signal="toggled" from="Button4" to="." method="_on_button_toggled"]
+[connection signal="toggled" from="Button5" to="." method="_on_button_toggled"]

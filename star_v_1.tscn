@@ -1,0 +1,40 @@
+[gd_scene load_steps=8 format=3 uid="uid://c774e880aen3j"]
+
+[ext_resource type="Texture2D" uid="uid://d0a5l64rpplo2" path="res://star1.png" id="1_gm8ag"]
+[ext_resource type="Texture2D" uid="uid://l4spmx6qn4is" path="res://star-on.png" id="2_lmqlw"]
+[ext_resource type="Script" uid="uid://b8683nmk4ux60" path="res://star_v_1.gd" id="3_cqpj6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xg8t8"]
+atlas = ExtResource("1_gm8ag")
+region = Rect2(0, 0, 22, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fii3p"]
+atlas = ExtResource("2_lmqlw")
+region = Rect2(0, 0, 22, 22)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g85o8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xg8t8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fii3p")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tri0g"]
+
+[node name="StarV1" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_g85o8")
+script = ExtResource("3_cqpj6")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_tri0g")
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

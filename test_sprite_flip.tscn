@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bbsgp4ur8gvf4"]
+
+[ext_resource type="Texture2D" uid="uid://d0a5l64rpplo2" path="res://star1.png" id="1_rdjen"]
+[ext_resource type="PackedScene" uid="uid://c774e880aen3j" path="res://star_v_1.tscn" id="2_5vx0p"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_rdjen"]
+pause = true
+one_shot = true
+frame_0/texture = ExtResource("1_rdjen")
+
+[node name="TestSpriteFlip" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(279, 206)
+scale = Vector2(4.45455, 4.45455)
+texture = SubResource("AnimatedTexture_rdjen")
+
+[node name="StarV1" parent="." instance=ExtResource("2_5vx0p")]
+position = Vector2(542, 196)
